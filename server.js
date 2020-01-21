@@ -24,13 +24,7 @@ server.use ([
 ])
 
 /// routers ///
-const subs = [ 'api' ]
-subs.forEach ((sub) => {
-  server.use (
-    `/${sub}`,
-    require (`./routers/${sub}`).router,
-  )
-})
+server.use ('/api', require ('./routers/api').router)
 
 /// requests ///
 server.route ('/')

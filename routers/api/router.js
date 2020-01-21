@@ -18,13 +18,7 @@ router.use ([
 ])
 
 /// sub-routers ///
-const subs = [ 'accounts' ]
-subs.forEach ((sub) => {
-  router.use (
-    `/${sub}`,
-    require (`./${sub}`).router,
-  )
-})
+server.use ('/accounts', require ('./accounts').router)
 
 /// requests ///
 router.route ('*')
