@@ -18,7 +18,7 @@ router.use ([
 ])
 
 /// sub-routers ///
-server.use ('/accounts', require ('./accounts').router)
+router.use ('/accounts', require ('./accounts').router)
 
 /// requests ///
 router.route ('*')
