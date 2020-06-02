@@ -1,7 +1,14 @@
-const server = require('./server.js');
+/**********************************************************/
 
-const PORT = process.env.PORT || 4000;
+require ('dotenv').config ()
+const { clog } = require ('./tools')
 
-server.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}...`);
-});
+const server = require ('./server.js')
+const port = process.env.PORT || 5555
+
+server.listen (port, () => {
+  clog (`it's alive!`)
+  clog (`\n>>> listening on port ${port} <<<\n`)
+})
+
+/**************************************/
